@@ -70,14 +70,14 @@ export default function NavBar() {
   return (
     <div
       ref={box}
-      className="sm:fixed z-50 font-sans  py-2 flex flex-col sm:flex-row w-full bg-[#131A22] text-white items-center"
+      className="fixed z-50 font-sans  py-2 flex flex-col sm:flex-row w-screen sm:w-full bg-[#131A22] text-white items-center"
     >
       <Link to="/home">
         <div className="flex justify-center items-center pt-2  w-36">
           <img src={amazonlogo} className="h-9 w-24" />
         </div>
       </Link>
-      <div className="px-10">
+      <div className="px-10 sm:mb-0 mb-8">
         <div className="text-xs">Hello</div>
         <div className="-mt-1  -ml-4 flex w-44 ">
           <HiOutlineLocationMarker className=" h-5 w-5 " />
@@ -108,7 +108,7 @@ export default function NavBar() {
             </div>
           </Link>
         </div>
-        <div className="overflow-y-auto max-h-[300px] min-h-[0px] -mt-2 bg-white text-black rounded-b-lg absolute w-[410px] pb-2 mr-[36px] ml-[67px]">
+        <div className="overflow-y-auto max-h-[300px] min-h-[0px] -mt-2 bg-white text-black rounded-b-lg absolute w-[160px] sm:w-[410px] pb-2 mr-[36px] ml-[67px]">
           {searchData.map((item) => (
             <div>
               <SearchComponent
@@ -121,33 +121,36 @@ export default function NavBar() {
           ))}
         </div>
       </div>
-      <div className="w-14 px-4 flex gap-2 pt-3">
-        <div className="pt-1">
-          <FaFlag />
+      <div className="flex mt-10 sm:mt-0 sm:justify-center sm:items.center">
+        <div className="w-14 px-4 flex gap-2 pt-3">
+          <div className="pt-1">
+            <FaFlag />
+          </div>
+          <div className="font-bold">EN</div>
         </div>
-        <div className="font-bold">EN</div>
-      </div>
-      <div className="ml-2 w-36 flex flex-col justify-center items-center">
-        <div className="text-xs font-semibold">
-          Hello,{userName.substring(0, 8)}
+        <div className="ml-2 w-36 flex flex-col justify-center items-center">
+          <div className="text-xs font-semibold">
+            Hello,{userName.substring(0, 8)}
+          </div>
+          <div className="font-bold text-sm">Nice to have you</div>
         </div>
-        <div className="font-bold text-sm">Nice to have you</div>
-      </div>
-      <div className="w-16 text-sm">
-        <div className="-mb-1 ">Returns</div>
-        <div className=" font-bold">& Orders</div>
-      </div>
-      <div className="ml-6 flex gap-2">
-        <div className="">
-          <Link to="/cart">
-            <FaShoppingCart className="h-8 w-8 text-amber-400" />
-            <div className="text-[#131A22] font-bold -mt-[30px] ml-[15px] text-sm">
-              {" "}
-              {value}
-            </div>
-          </Link>
+
+        <div className="w-16 text-sm">
+          <div className="-mb-1 ">Returns</div>
+          <div className=" font-bold">& Orders</div>
         </div>
-        <div className="text-sm pt-3 font-bold">Cart</div>
+        <div className="ml-6 flex gap-2">
+          <div className="">
+            <Link to="/cart">
+              <FaShoppingCart className="h-8 w-8 text-amber-400" />
+              <div className="text-[#131A22] font-bold -mt-[30px] ml-[15px] text-sm">
+                {" "}
+                {value}
+              </div>
+            </Link>
+          </div>
+          <div className="text-sm pt-3 font-bold">Cart</div>
+        </div>
       </div>
     </div>
   );

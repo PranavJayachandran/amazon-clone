@@ -77,7 +77,7 @@ export default function CartSpecific({ id, value }) {
           <div className="flex">
             <div
               className="mt-[5px] bg-amber-400 rounded-l-md h-8 w-8 flex justify-center items-center cursor-pointer hover:bg-amber-500"
-              onClick={addProductByOne}
+              onClick={removeProductByOne}
             >
               -
             </div>
@@ -86,7 +86,7 @@ export default function CartSpecific({ id, value }) {
             </div>
             <div
               className="mt-[5px] bg-amber-400 rounded-r-md h-8 w-8 flex justify-center items-center cursor-pointer hover:bg-amber-500"
-              onClick={removeProductByOne}
+              onClick={addProductByOne}
             >
               +
             </div>
